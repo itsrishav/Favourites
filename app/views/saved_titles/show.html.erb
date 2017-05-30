@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @saved_title.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @saved_title.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @saved_title.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_saved_title_path(@saved_title) %> |
+<%= link_to 'Back', saved_titles_path %>

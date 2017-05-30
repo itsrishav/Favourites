@@ -1,0 +1,2 @@
+class SavedTitle < ApplicationRecord
+end
