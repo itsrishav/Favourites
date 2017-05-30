@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Saved Titles</h1>
+<h1>Movies List</h1>
 
 <table>
   <thead>
@@ -15,12 +15,9 @@
   <tbody>
     <% @saved_titles.each do |saved_title| %>
       <tr>
+        <td><%= image_tag(saved_title.image_url, size: "250x250") %></td>
         <td><%= saved_title.title %></td>
         <td><%= saved_title.description %></td>
-        <td><%= saved_title.image_url %></td>
-        <td><%= link_to 'Show', saved_title %></td>
-        <td><%= link_to 'Edit', edit_saved_title_path(saved_title) %></td>
-        <td><%= link_to 'Destroy', saved_title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Saved Title', new_saved_title_path %>
+<%= link_to 'Home', root_path %>

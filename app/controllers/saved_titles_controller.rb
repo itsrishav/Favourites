@@ -25,10 +25,9 @@ class SavedTitlesController < ApplicationController
   # POST /saved_titles.json
   def create
     @saved_title = SavedTitle.new(saved_title_params)
-
     respond_to do |format|
       if @saved_title.save
-        format.html { redirect_to @saved_title, notice: 'Saved title was successfully created.' }
+        format.html { redirect_to @saved_title, notice: 'Movie was successfully added to list.' }
         format.json { render :show, status: :created, location: @saved_title }
       else
         format.html { render :new }
@@ -69,6 +68,6 @@ class SavedTitlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def saved_title_params
-      params.require(:saved_title).permit(:title, :description, :image_url)
+      params.permit(:title, :description, :image_url)
     end
 end
