@@ -1,13 +1,13 @@
 <%- if @data.present? %>
-	<div class="figure">
+  <div class="figure">
     <p><%= @data[:movie_title] %> </p>
     <p><%= image_tag(@data[:movie_poster], size: "250x250") %> </p>
     <p><%= @data[:description] %></p>
-   </div>
-   <div style="padding-left: 260px; padding-top: 20px;">
-   		<%= button_to "Add to Favourites", saved_titles_path, id: "favourite", params: {title: @data[:movie_title], description: @data[:description], image_url: @data[:movie_poster]}%>
-   </div>
+  </div>
+  <div style="padding-left: 260px; padding-top: 20px;">
+    <%= button_to "Add to Favourites", saved_titles_path, id: "favourite", params: {title: @data[:movie_title], description: @data[:description], image_url: @data[:movie_poster]}%>
+  </div>
 <%- else %>
-	<h1>You have entered an incorrect movie name</h1>
-	<%= button_to "Retry", root_path, method: :get %>
+  <h1>You have entered an incorrect movie name</h1>
+  <%= button_to "Retry", root_path, method: :get %>
 <%- end %>
